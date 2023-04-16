@@ -195,8 +195,9 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 function findPersonFamily(person){
-    let foundpersonfamily = displayPeople{foundspouse, foundparents, foundsiblings};
-    return foundpersonfamily
+    let foundpersonfamily = displayPeople.mapfunction(findspouse, findparents, findsiblings);
+    return foundpersonfamily;
+}
 
 function findSpouse(people){
     let foundspouse = people.filter(function(person){
@@ -225,7 +226,7 @@ function findSiblings(people){
     return foundsiblings
 }
 
-function findPersonDescendants(person[0], people){
+function findPersonDescendants(person, people){
     let subpeople = person.descendants;
     people = [person]
     if (subpeople.length === 0) {
