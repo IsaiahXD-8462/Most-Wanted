@@ -224,3 +224,17 @@ function findSiblings(people){
     });
     return foundsiblings
 }
+
+function findPersonDescendants(person[0], people){
+    let subpeople = person.descendants;
+    people = [person]
+    if (subpeople.length === 0) {
+        return 
+    }
+    for (let i = 0; i < subpeople.length; i++){
+        people = people.concat(
+            findPersonDescendants(subpeople[i])
+        );
+    }
+    return people
+}
