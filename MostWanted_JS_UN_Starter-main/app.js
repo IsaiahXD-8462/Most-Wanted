@@ -68,12 +68,11 @@ function mainMenu(person, people) {
             // HINT: Look for a person-object stringifier utility function to help
             let personInfo = displayPerson(person[0]);
             alert(personInfo);
-            console.log(personInfo);
             break;
         case "family":
             //! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
             // HINT: Look for a people-collection stringifier utility function to help
-            let personFamily = findPersonFamily.map(person[0], people);
+            let personFamily = findPersonFamily.(person[0], people);
             alert(personFamily);
             break;
         case "descendants":
@@ -149,7 +148,7 @@ function displayPerson(person) {
     personInfo += `Eye Color: ${person.eyeColor}\n`
     personInfo += `Occupation: ${person.occupation}\n`
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
-    alert(personInfo);
+    return personInfo;
 }
 // End of displayPerson()
 
