@@ -72,7 +72,7 @@ function mainMenu(person, people) {
         case "family":
             //! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
             // HINT: Look for a people-collection stringifier utility function to help
-            let personFamily = findPersonFamily.(person[0], people);
+            let personFamily = findPersonFamily(person[0], people);
             alert(personFamily);
             break;
         case "descendants":
@@ -87,6 +87,9 @@ function mainMenu(person, people) {
             break;
         case "quit":
             // Stop application execution
+            return;
+        case "test":
+
             return;
         default:
             // Prompt user again. Another instance of recursion
