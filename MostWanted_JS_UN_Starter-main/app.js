@@ -198,6 +198,7 @@ function findPersonFamily(person){
     findSpouse()
     findParents()
     findSiblings()
+    findPersonDescendants()
 }
 
 function findSpouse(people){
@@ -206,7 +207,7 @@ function findSpouse(people){
             return true;
         }
     });
-    return displayPeople(foundspouse);
+    displayPeople(foundspouse);
 }
 
 function findParents(people){
@@ -215,22 +216,25 @@ function findParents(people){
             return true
         }
     });
-    return foundparents
+    displayPeople (foundparents)
 }
 
 function findSiblings(people){
     let foundsiblings = people.filter(function(person){
-        if(person[0].parents === person.parents){
+        if(person.parents === person.parents){
             return true
         }
     });
-    return foundsiblings
+    displayPeople (foundsiblings)
 }
 
-function findPersonDescendants(person, people){
+function findPersonDescendants(personD, people){
     let foundDecendants = people.filter(function(person){
-        if(person.id.includes(person.parents))
-    })
+        if(personD.id.includes(person.parents)){
+            return true
+        }
+    });
+    displayPeople (foundDecendants)
 
     //let subpeople = person.descendants;
     //people = [person]
@@ -250,28 +254,28 @@ function searchByTraits(people){
     
     switch(foundtrait){
         case "gender":
-            let foundGender = filterByGender(person[0], people);
-            alert(foundGender);
+            let foundGender = filterByGender(people);
+            displayPeople(foundGender);
             break;
         case "gender":
-            let foundDateOfBirth = filterByDateOfBirth(person[0], people);
-            alert(foundDateOfBirth);
+            let foundDateOfBirth = filterByDateOfBirth(person, people);
+            displayPeople(foundDateOfBirth);
             break;
         case "gender":
-            let foundHeight = filterByHeight(person[0], people);
-            alert(foundHeight);
+            let foundHeight = filterByHeight(person, people);
+            displayPeople(foundHeight);
             break;
         case "gender":
-            let foundWeight = filterByWeight(person[0], people);
-            alert(foundWeight);
+            let foundWeight = filterByWeight(person, people);
+            displayPeople(foundWeight);
             break;
         case "gender":
-            let foundEyeColor = filterByEyeColor(person[0], people);
-            alert(foundEyeColor);
+            let foundEyeColor = filterByEyeColor(person, people);
+            displayPeople(foundEyeColor);
             break;
         case "gender":
-            let foundOccupation = filterByOccupation(person[0], people);
-            alert(foundOccupation);
+            let foundOccupation = filterByOccupation(person, people);
+            displayPeople(foundOccupation);
             break;
     }
 }
@@ -283,6 +287,7 @@ function filterByGender(people){
         return true
        } 
     })
+    return foundPeople
 }
 
 function filterByDateOfBirth(people){
