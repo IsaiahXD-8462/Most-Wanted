@@ -195,8 +195,9 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 function findPersonFamily(person){
-    let foundpersonfamily = displayPeople.mapfunction(findspouse, findparents, findsiblings);
-    return foundpersonfamily;
+    findSpouse()
+    findParents()
+    findSiblings()
 }
 
 function findSpouse(people){
@@ -205,7 +206,7 @@ function findSpouse(people){
             return true;
         }
     });
-    return foundspouse;
+    return displayPeople(foundspouse);
 }
 
 function findParents(people){
@@ -269,6 +270,51 @@ function filterByGender(people){
     let userInput = prompt("Enter the gender you want to search for")
     let foundPeople = people.filter(function(person){
        if(person.gender === userInput){
+        return true
+       } 
+    })
+}
+
+function filterDateOfBirth(people){
+    let userInput = prompt("Enter the date of birth you want to search for")
+    let foundPeople = people.filter(function(person){
+       if(person.dob = userInput){
+        return true
+       } 
+    })
+}
+
+function filterByHeight(people){
+    let userInput = prompt("Enter the height you want to search for")
+    let foundPeople = people.filter(function(person){
+       if(person.weight == userInput){
+        return true
+       } 
+    })
+}
+
+function filterByWeight(people){
+    let userInput = prompt("Enter the weight you want to search for")
+    let foundPeople = people.filter(function(person){
+       if(person.weight == userInput){
+        return true
+       } 
+    })
+}
+
+function filterEyeColor(people){
+    let userInput = prompt("Enter the eye color you want to search for")
+    let foundPeople = people.filter(function(person){
+       if(person.eyeColor === userInput){
+        return true
+       } 
+    })
+}
+
+function filterByOccupation(people){
+    let userInput = prompt("Enter the occupation you want to search for")
+    let foundPeople = people.filter(function(person){
+       if(person.occupation === userInput){
         return true
        } 
     })
