@@ -228,17 +228,21 @@ function findSiblings(people){
 }
 
 function findPersonDescendants(person, people){
-    let subpeople = person.descendants;
-    people = [person]
-    if (subpeople.length === 0) {
-        return 
-    }
-    for (let i = 0; i < subpeople.length; i++){
-        people = people.concat(
-            findPersonDescendants(subpeople[i])
-        );
-    }
-    return people
+    let foundDecendants = people.filter(function(person){
+        if(person.id.includes(person.parents))
+    })
+
+    //let subpeople = person.descendants;
+    //people = [person]
+    //if (subpeople.length === 0) {
+        //return 
+    //}
+    //for (let i = 0; i < subpeople.length; i++){
+        //people = people.concat(
+            //findPersonDescendants(subpeople[i])
+        //);
+    //}
+    //return people
 }
 
 function searchByTraits(people){
