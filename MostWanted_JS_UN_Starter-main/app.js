@@ -242,28 +242,34 @@ function findPersonDescendants(person, people){
 }
 
 function searchByTraits(people){
-    let inputamount = promptFor("Do you want to search for one or multiple traits? Type one or multiple.", chars).toLowerCase();
+    let foundtrait = promptFor("Which trait would you like to search: gender, date of birth, height, weight, eyeColor, occupation?", chars).toLowerCase();
     
-    switch(inputamount){
-        case "one":
-            return
-            // let foundtrait = people.filter(function(person){
-            // promptFor("Which trait would you like to search: gender, date of birth, height, weight, eyeColor, occupation?")
-            //     if (person.Array.includes(foundtrait) || parseInt(person.Array.includes(foundtrait)))
-            //     return true
-            // )}
-        case "multiple":
-            return
-            // let foundtrait = people.filter(function(person){
-            // promptFor("Which traits would you like to search: gender, date of birth, height, weight, eyeColor, occupation? Please separate each trait by comma and space.")
-            //     if (person.Array.includes(foundtrait) || parseInt(person.Array.includes(foundtrait)))
-            //     return true
-            // )} 
+    switch(foundtrait){
+        case "gender":
+            let foundGender = filterByGender(person[0], people);
+            alert(foundGender);
+            break;
+        case "gender":
+            let foundDateOfBirth = filterByDateOfBirth(person[0], people);
+            alert(foundDateOfBirth);
+            break;
+        case "gender":
+            let foundHeight = filterByHeight(person[0], people);
+            alert(foundHeight);
+            break;
+        case "gender":
+            let foundWeight = filterByWeight(person[0], people);
+            alert(foundWeight);
+            break;
+        case "gender":
+            let foundEyeColor = filterByEyeColor(person[0], people);
+            alert(foundEyeColor);
+            break;
+        case "gender":
+            let foundOccupation = filterByOccupation(person[0], people);
+            alert(foundOccupation);
+            break;
     }
-}
-
-function onemultiple(input) {
-    return input.toLowerCase() === "one" || input.toLowerCase() === "multiple";
 }
 
 function filterByGender(people){
@@ -275,7 +281,7 @@ function filterByGender(people){
     })
 }
 
-function filterDateOfBirth(people){
+function filterByDateOfBirth(people){
     let userInput = prompt("Enter the date of birth you want to search for")
     let foundPeople = people.filter(function(person){
        if(person.dob = userInput){
@@ -302,7 +308,7 @@ function filterByWeight(people){
     })
 }
 
-function filterEyeColor(people){
+function filterByEyeColor(people){
     let userInput = prompt("Enter the eye color you want to search for")
     let foundPeople = people.filter(function(person){
        if(person.eyeColor === userInput){
