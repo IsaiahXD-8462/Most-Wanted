@@ -202,7 +202,7 @@ function findPersonFamily(person){
 function findSpouse(people){
     let foundspouse = people.filter(function(person){
         if (person.currentSpouse === person.id){
-            return  true;
+            return true;
         }
     });
     return foundspouse;
@@ -241,30 +241,35 @@ function findPersonDescendants(person, people){
 }
 
 function searchByTraits(people){
-    let inputamount = promptFor("Do you want to search for one or multiple traits? Type one or multiple.", chars)
-    onemultiple
-    ).toLowerCase();
+    let inputamount = promptFor("Do you want to search for one or multiple traits? Type one or multiple.", chars).toLowerCase();
     
     switch(inputamount){
         case "one":
-            let foundtrait = people.filter(function(person){
-            promptFor("Which trait would you like to search: gender, date of birth, height, weight, eyeColor, occupation?")
-                if (person.Array.includes(foundtrait) || parseInt(person.Array.includes(foundtrait)))
-                return true
-            )}
+            return
+            // let foundtrait = people.filter(function(person){
+            // promptFor("Which trait would you like to search: gender, date of birth, height, weight, eyeColor, occupation?")
+            //     if (person.Array.includes(foundtrait) || parseInt(person.Array.includes(foundtrait)))
+            //     return true
+            // )}
         case "multiple":
-            let foundtrait = people.filter(function(person){
-            promptFor("Which traits would you like to search: gender, date of birth, height, weight, eyeColor, occupation? Please separate each trait by comma and space.")
-                if (person.Array.includes(foundtrait) || parseInt(person.Array.includes(foundtrait)))
-                return true
-            )} 
+            return
+            // let foundtrait = people.filter(function(person){
+            // promptFor("Which traits would you like to search: gender, date of birth, height, weight, eyeColor, occupation? Please separate each trait by comma and space.")
+            //     if (person.Array.includes(foundtrait) || parseInt(person.Array.includes(foundtrait)))
+            //     return true
+            // )} 
     }
-        
-
-
-    
 }
 
 function onemultiple(input) {
     return input.toLowerCase() === "one" || input.toLowerCase() === "multiple";
+}
+
+function filterByGender(people){
+    let userInput = prompt("Enter the gender you want to search for")
+    let foundPeople = people.filter(function(person){
+       if(person.gender === userInput){
+        return true
+       } 
+    })
 }
