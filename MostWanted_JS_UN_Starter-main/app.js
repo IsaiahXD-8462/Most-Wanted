@@ -239,3 +239,32 @@ function findPersonDescendants(person, people){
     }
     return people
 }
+
+function searchByTraits(people){
+    let inputamount = promptFor("Do you want to search for one or multiple traits? Type one or multiple.", chars)
+    onemultiple
+    ).toLowerCase();
+    
+    switch(inputamount){
+        case "one":
+            let foundtrait = people.filter(function(person){
+            promptFor("Which trait would you like to search: gender, date of birth, height, weight, eyeColor, occupation?")
+                if (person.Array.includes(foundtrait) || parseInt(person.Array.includes(foundtrait)))
+                return true
+            )}
+        case "multiple":
+            let foundtrait = people.filter(function(person){
+            promptFor("Which traits would you like to search: gender, date of birth, height, weight, eyeColor, occupation? Please separate each trait by comma and space.")
+                if (person.Array.includes(foundtrait) || parseInt(person.Array.includes(foundtrait)))
+                return true
+            )} 
+    }
+        
+
+
+    
+}
+
+function onemultiple(input) {
+    return input.toLowerCase() === "one" || input.toLowerCase() === "multiple";
+}
