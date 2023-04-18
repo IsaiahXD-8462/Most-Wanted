@@ -194,7 +194,7 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
-function findPersonFamily(person){
+function findPersonFamily(person, people){
     findSpouse()
     findParents()
     findSiblings()
@@ -250,35 +250,43 @@ function findPersonDescendants(person0, people){
 }
 
 function searchByTraits(people){
-    let foundtrait = promptFor("Which trait would you like to search: gender, date of birth, height, weight, eye color, occupation?", chars).toLowerCase();
-    
-    switch(foundtrait){
-        case "gender":
-            let foundGender = filterByGender(people);
-            displayPeople(foundGender);
-            break;
-        case "date of birth":
-            let foundDateOfBirth = filterByDateOfBirth(people);
-            displayPeople(foundDateOfBirth);
-            break;
-        case "height":
-            let foundHeight = filterByHeight(people);
-            displayPeople(foundHeight);
-            break;
-        case "weight":
-            let foundWeight = filterByWeight(people);
-            displayPeople(foundWeight);
-            break;
-        case "eye color":
-            let foundEyeColor = filterByEyeColor(people);
-            displayPeople(foundEyeColor);
-            break;
-        case "occupation":
-            let foundOccupation = filterByOccupation(people);
-            displayPeople(foundOccupation);
-            break;
-    }
-}
+    let userIsHappy = true
+    let peopleList = people
+
+    while (userIsHappy == true) {
+        let foundtrait = promptFor("Which trait would you like to search: gender, date of birth, height, weight, eye color, occupation or enter finish when completed?", chars).toLowerCase();
+        // if found
+
+        switch(foundtrait){
+            case "gender":
+                peopleList = filterByGender(peopleList);
+                displayPeople(peopleList);
+                break;
+            case "date of birth":
+                let peopleList = filterByDateOfBirth(peopleList);
+                displayPeople(foundDateOfBirth);
+                break;
+            case "height":
+                let peopleList = filterByHeight(peopleList);
+                displayPeople(foundHeight);
+                break;
+            case "weight":
+                let peopleList = filterByWeight(peopleList);
+                displayPeople(foundWeight);
+                break;
+            case "eye color":
+                let peopleList = filterByEyeColor(peopleList);
+                displayPeople(foundEyeColor);
+                break;
+            case "occupation":
+                let peopleList = filterByOccupation(peopleList);
+                displayPeople(foundOccupation);
+                break;
+            case "finish":
+                userIsHappy = false
+                break
+        }
+}}
 
 function filterByGender(people){
     let userInput = prompt("Enter the gender you want to search for")
