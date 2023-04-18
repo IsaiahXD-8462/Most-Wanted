@@ -216,7 +216,7 @@ function findParents(person0, people){
             return true
         }
     });
-    displayPeople (foundparents)
+    displayPeople(foundparents)
 }
 
 function findSiblings(person0, people){
@@ -225,7 +225,7 @@ function findSiblings(person0, people){
             return true
         }
     });
-    displayPeople (foundsiblings)
+    displayPeople(foundsiblings)
 }
 
 function findPersonDescendants(person0, people){
@@ -234,7 +234,7 @@ function findPersonDescendants(person0, people){
             return true
         }
     });
-    displayPeople (foundDecendants)
+    displayPeople(foundDecendants)
 
     //let subpeople = person.descendants;
     //people = [person]
@@ -264,23 +264,23 @@ function searchByTraits(people){
                 break;
             case "date of birth":
                 let peopleList = filterByDateOfBirth(peopleList);
-                displayPeople(foundDateOfBirth);
+                displayPeople(peopleList);
                 break;
             case "height":
                 let peopleList = filterByHeight(peopleList);
-                displayPeople(foundHeight);
+                displayPeople(peopleList);
                 break;
             case "weight":
                 let peopleList = filterByWeight(peopleList);
-                displayPeople(foundWeight);
+                displayPeople(peopleList);
                 break;
             case "eye color":
                 let peopleList = filterByEyeColor(peopleList);
-                displayPeople(foundEyeColor);
+                displayPeople(peopleList);
                 break;
             case "occupation":
                 let peopleList = filterByOccupation(peopleList);
-                displayPeople(foundOccupation);
+                displayPeople(peopleList);
                 break;
             case "finish":
                 userIsHappy = false
