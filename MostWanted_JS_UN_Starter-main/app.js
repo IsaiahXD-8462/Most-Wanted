@@ -195,10 +195,10 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 function findPersonFamily(person, people){
-    findSpouse()
-    findParents()
-    findSiblings()
-    findPersonDescendants()
+    findSpouse(person, people)
+    findParents(person, people)
+    findSiblings(person, people)
+    findPersonDescendants(person, people)
 }
 
 function findSpouse(person0, people){
@@ -263,23 +263,23 @@ function searchByTraits(people){
                 displayPeople(peopleList);
                 break;
             case "date of birth":
-                let peopleList = filterByDateOfBirth(peopleList);
+                peopleList = filterByDateOfBirth(peopleList);
                 displayPeople(peopleList);
                 break;
             case "height":
-                let peopleList = filterByHeight(peopleList);
+                peopleList = filterByHeight(peopleList);
                 displayPeople(peopleList);
                 break;
             case "weight":
-                let peopleList = filterByWeight(peopleList);
+                peopleList = filterByWeight(peopleList);
                 displayPeople(peopleList);
                 break;
             case "eye color":
-                let peopleList = filterByEyeColor(peopleList);
+                peopleList = filterByEyeColor(peopleList);
                 displayPeople(peopleList);
                 break;
             case "occupation":
-                let peopleList = filterByOccupation(peopleList);
+                peopleList = filterByOccupation(peopleList);
                 displayPeople(peopleList);
                 break;
             case "finish":
